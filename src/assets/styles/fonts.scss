@@ -13,3 +13,20 @@
         url('assets/fonts/opensans/opensans.woff2') format('woff2'),
         url('assets/fonts/opensans/opensans.woff') format('woff')
 }
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url('assets/fonts/sfProDisplay/SFProDisplay-Regular.eot');
+  src: url('assets/fonts/sfProDisplay/SFProDisplay-Regular.eot') format('embedded-opentype'),
+  url('assets/fonts/sfProDisplay/SFProDisplay-Regular.woff') format('woff'),
+  url('assets/fonts/sfProDisplay/SFProDisplay-Regular.woff2') format('woff2'),
+  url('assets/fonts/sfProDisplay/SFProDisplay-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'GothamProRegular';
+  src: url('assets/fonts/gothamProRegular/GothamProRegular.eot');
+  src: url('assets/fonts/gothamProRegular/GothamProRegular.eot') format('embedded-opentype'),
+  url('assets/fonts/gothamProRegular/GothamProRegular.woff') format('woff'),
+  url('assets/fonts/gothamProRegular/GothamProRegular.ttf') format('truetype')
+}
