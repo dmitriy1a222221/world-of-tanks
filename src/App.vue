@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <Layout>
       <router-view/>
     </Layout>
@@ -19,4 +19,14 @@ export default {
 <style lang="scss">
   @import "assets/styles/fonts";
   @import "assets/styles/reset";
+
+  body {
+    background-color: #141618;
+    background: url("assets/image/wot-bg.jpg");
+    background-size: cover;
+  }
+
+  .app {
+    height: 100%;
+  }
 </style>

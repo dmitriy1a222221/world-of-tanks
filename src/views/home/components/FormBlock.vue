@@ -8,7 +8,7 @@
       <input type="text" placeholder="Номер мобільного телефону" class="b-form__input">
       <label class="container">
         <p class="container__text">
-          Я погоджуюся з <span class="text-red">умовами оформлення</span> онлайн-заявки
+          Я погоджуюся з <a href="https://alfabank.ua/about/usloviya-oformleniya-onlajn-zayavki" target="_blank" class="text-red">умовами оформлення</a> онлайн-заявки
         </p>
         <input type="checkbox">
         <span class="checkmark"></span>
@@ -31,6 +31,7 @@ export default {
 
 .text-red {
   color: $text_color_4;
+  text-decoration: none;
 }
 
 .b-form {
@@ -123,17 +124,10 @@ export default {
       width: 0;
     }
 
-    &>input:checked ~ .checkmark {
-      background-color: $text_color_9;
-    }
     &>input:checked ~ .checkmark:after {
       display: block;
     }
-    &:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
+
   }
   .checkmark {
     position: absolute;
@@ -145,6 +139,22 @@ export default {
     border: 2px solid $text_color_7;
     background-color: transparent;
     box-sizing: border-box;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &:after {
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid $text_color_9;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
   }
 }
 
@@ -153,6 +163,45 @@ export default {
     &__title {
       text-align: left;
     }
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .b-form {
+    padding: 60px 45px 40px 45px;
+    align-items: flex-start;
+
+    &__form {
+      align-items: flex-start;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    &__input {
+      font-size: 18px;
+      max-width: 300px;
+
+      &:last-child {
+        margin-bottom: 42px;
+      }
+    }
+
+    &__button {
+      margin-top: 25px;
+    }
+
+    .container__text {
+      max-width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .b-form {
+    padding: 60px 162px 40px 66px;
   }
 }
 </style>

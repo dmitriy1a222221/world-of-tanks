@@ -1,10 +1,14 @@
 <template>
   <div class="home">
     <div class="home__wrap-cont">
-      <HeadSection />
-      <FormBlock class="home__form-mob"/>
-      <BottomInfo />
-      <FooterBlock />
+      <div>
+        <HeadSection />
+        <FormBlock class="home__form-mob"/>
+      </div>
+      <div>
+        <BottomInfo />
+        <FooterBlock />
+      </div>
     </div>
     <FormBlock class="home__form-desck" />
   </div>
@@ -32,6 +36,8 @@ export default {
 
   .home {
     width: 100%;
+    height: auto;
+    min-height: 100%;
 
     &__form-mob {
       display: block;
@@ -44,6 +50,14 @@ export default {
   @media screen and (min-width: 1200px) {
     .home {
       display: flex;
+      justify-content: space-between;
+
+      &__wrap-cont {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
       &__form-mob {
         display: none;

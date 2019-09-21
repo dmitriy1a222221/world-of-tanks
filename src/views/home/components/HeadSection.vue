@@ -3,9 +3,13 @@
     <img src="@/assets/image/Logo.svg" alt="logo" class="head-section__logo">
     <div class="head-section__main-info">
       <div class="head-section__btn-card">
-        <div class="head-section__btn-circle">
-          <img
-            src="../../../assets/image/Vector.svg" alt="arrow" class="head-section__btn-arrow">
+        <div
+          class="head-section__btn-circle"
+          v-on:click="toggleVideo"
+        >
+          <Triangle
+            class="head-section__btn-arrow"
+          />
         </div>
       </div>
       <div class="head-section__main-info-text">
@@ -46,13 +50,38 @@
         </div>
       </div>
     </div>
+    <PopUpVideo
+      v-show="showVideo"
+      v-on:closeVideo="toggleVideo"
+      :showPop="showVideo"
+    />
   </div>
 </template>
 
 <script>
+import Triangle from '@/components/svgComponents/Triangle'
+import PopUpVideo from '@/components/PopUpVideo'
 
 export default {
-  name: 'HeadSection'
+  name: 'HeadSection',
+  data: function () {
+    return {
+      showVideo: false
+    }
+  },
+  methods: {
+    toggleVideo: function (data) {
+      if (data.show) {
+        this.showVideo = data.show
+      } else {
+        this.showVideo = !this.showVideo
+      }
+    }
+  },
+  components: {
+    Triangle,
+    PopUpVideo
+  }
 }
 </script>
 
@@ -68,8 +97,6 @@ export default {
 
 .head-section {
   width: 100%;
-  background: url("../../../assets/image/bg.png");
-  background-size: cover;
   padding: 36px 0 44px;
 
   &__logo {
@@ -105,16 +132,23 @@ export default {
     align-items: center;
     justify-content: center;
     background: $text_color_3;
-    opacity: 0.8;
     box-shadow: 0 0 30px 8px $text_color_3;
+    transition: border-color .2s;
+    cursor: pointer;
 
     &:hover {
-      border-color: #EB5757
+      border-color: $text_color_10;
+    }
+
+    &:hover .head-section__btn-arrow {
+      fill: $text_color_10;
     }
   }
 
   &__btn-arrow {
     padding-left: 7px;
+    fill: $text_color_2;
+    transition: fill .2s;
   }
 
   &__title {
@@ -190,6 +224,7 @@ export default {
   }
 
   .head-section {
+
     &__main-info {
       flex-direction: row-reverse;
       align-items: flex-start;
@@ -218,4 +253,59 @@ export default {
     }
   }
 }
+
+@media screen and (min-width: 1700px) {
+  .head-section {
+    padding: 56px 0 45px;
+
+    &__logo {
+      padding-left: 153px;
+      margin-bottom: 140px;
+    }
+
+    &__main-info {
+      padding: 0 103px 0 153px;
+    }
+
+    &__title {
+      font-size: 66px;
+      line-height: 86px;
+    }
+
+    &__descr {
+      font-size: 18px;
+      line-height: 17px;
+    }
+
+    &__item-title {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    &__item-descr {
+      font-size: 18px;
+      line-height: 28px;
+      max-width: 270px;
+    }
+
+    &__sub-info-wrap-item {
+      margin-right: 175px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__btn-card {
+      width: 391px;
+      min-width: 391px;
+      height: 246px;
+    }
+
+    &__sub-info {
+      padding-left: 153px;
+    }
+  }
+}
+
 </style>

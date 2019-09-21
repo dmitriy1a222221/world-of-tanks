@@ -88,4 +88,15 @@ export default {
       }
     }
   }
+
+  @media screen and (min-width: 1700px) {
+    .bottom-info {
+      padding: 43px 20px 43px 153px;
+
+      &__item-title {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
 </style>

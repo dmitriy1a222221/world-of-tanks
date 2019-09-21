@@ -16,6 +16,8 @@ export default {
   .layout {
     min-width: 320px;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
+
   }
 </style>
