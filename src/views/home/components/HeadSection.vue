@@ -121,6 +121,8 @@ export default {
     align-items: center;
     justify-content: center;
     margin-bottom: 45px;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   &__btn-circle {
